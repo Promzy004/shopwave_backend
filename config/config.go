@@ -33,5 +33,5 @@ func GetDBDSN () string {
 	dbName := GetEnv("DB_DATABASE", "")
 	password := GetEnv("DB_PASSWORD", "")
 
-	return fmt.Sprintf("%s:%s@protocol(%s:%s)/%s?param=value", user, password, host, port, dbName)
+	return fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?parseTime=true&multiStatements=true", user, password, host, port, dbName)
 }
